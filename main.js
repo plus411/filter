@@ -42,7 +42,7 @@ bot.on('voiceStateUpdate', (oldState, state) => {
   } else {
     state.removeRole(state.guild.roles.find('name', 'Voice'));
  }
- });
+});
 
 
 bot.login(auth.token);

@@ -28,7 +28,7 @@ var minigame = new Discord.RichEmbed()
 	.addField('Vote on your favorite!', 'http://poll.mcaquarium.com')
 	.setFooter('The Aquarium Discord');
 
-var julyuhc = new Discord.richEmbed()
+var julyuhc = new Discord.RichEmbed()
     .setColor('#C63F29')
     .setAuthor("End the Ender UHC")
     .setImage('http://imgur.com/uniOAWb')

@@ -13,9 +13,9 @@ bot.on('message', message => {
 	var command = cmdProcess.makeCommand(message.content);
 	var cmdRaw = cmdProcess.makeCommand(message.content, true);
 	
-	if (command === 'filter') {message.channel.send('Filtering Tank!');}
+	if (command === auth.prefix) {message.channel.send('Filtering Tank!');}
 	
-	if (command[0] == 'filter') {
+	if (command[0] == auth.prefix) {
   	switch (command[1]) {
     	case 'join':
 				group.group(message, command, cmdRaw);

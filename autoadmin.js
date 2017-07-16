@@ -2,7 +2,7 @@
 // Used to do automatic administraion of the server
 
 var log = [];
-var authNum = ;
+var authNum = 0;
 
 module.exports = {
     nospam: function(message) {

@@ -33,6 +33,10 @@ bot.on('message', message => {
 			case 'roll':
 				dice.roll(command,message);
 			break;
+            
+            case 'embed':
+                embed.send(message);
+            break;
     }}
     
     admin.nospam(message);

@@ -28,6 +28,14 @@ var minigame = new Discord.RichEmbed()
 	.addField('Vote on your favorite!', 'http://poll.mcaquarium.com')
 	.setFooter('The Aquarium Discord');
 
+var julyuhc = new Discord.RichEmbed()
+    .setColor('#C63F29')
+    .setAuthor("End the Ender UHC")
+    .setImage('http://i.imgur.com/uniOAWb.png')
+    .setDescription("It's time to end the ender dragon! The UHC will take place on:")
+    .addField('July 30 at 3 PM EST', "For the first time we'll be returning to the true basics of UHC. This month, in order to win, you need to kill the Ender Dragon! Don't dispair though, you also have the option to murder all of the enemies if that's more your style.")
+    .setFooter('The Aquarium Discord');
+
 module.exports = {
 	send: function(message, announce, everyone) {
 		if (!message.member.roles.exists('name', 'Great Lotls')) {
@@ -36,7 +44,7 @@ module.exports = {
 		
 		var ping = ' ';
 		if (everyone) { ping = '@everyone'; } 
-		if (announce) { message.guild.channels.find('name', 'announcements').send(ping, {embed: uhc});}
-		else { message.channel.send(ping, {embed: uhc}); }
+		if (announce) { message.guild.channels.find('name', 'announcements').send(ping, {embed: julyuhc});}
+		else { message.channel.send(ping, {embed: julyuhc}); }
 	}
 }

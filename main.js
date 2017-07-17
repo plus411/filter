@@ -6,6 +6,7 @@ const group = require('./group.js');
 const embed = require('./embed.js');
 const dm = require('./direct.js');
 const dice = require('./dice.js');
+const admin = require('./autoadmin.js')
 
 bot.on('ready', () => { console.log('Tank Filled!') });
 
@@ -32,8 +33,13 @@ bot.on('message', message => {
 			case 'roll':
 				dice.roll(command,message);
 			break;
-  	}
-	} 
+            
+            case 'embed':
+                embed.send(message);
+            break;
+    }}
+    
+    admin.log(message);
 });
 
 bot.on('voiceStateUpdate', (oldState, state) => {

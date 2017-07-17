@@ -19,7 +19,7 @@ module.exports = {
             break;
                 
             case 'remove':
-                console.log(message.guild.channels.findAll('name', 'auto'))
+                message.guild.channels.findAll('name', 'auto').forEach(function(channel) { channel.delete() })
                 
             break;
                 

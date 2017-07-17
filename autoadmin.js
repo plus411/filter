@@ -6,7 +6,9 @@ module.exports = {
         if (message.channel != message.guild.channels.find('name', 'adminlog')) {
             //message.guild.channels.find('name', 'adminlog').sendMessage(message.channel + ' : ' + message.author + ' : ' + message.content);
             
-            message.guild.channels.find('name', 'adminlog').send(message.content, {files:message.attachments.every()});
+            //message.guild.channels.find('name', 'adminlog').send(message.content, {files:message.attachments.every()});
+            
+            console.log(message.attachments);
         }
     }
 }

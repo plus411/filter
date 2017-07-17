@@ -8,13 +8,18 @@ module.exports = {
             case 'add':
                 if (command[3] > 0) { var amount = command[3] }
                 else { 
-                    message.send('Try formatting the command like this: _filter voice add <amount>_') 
+                    message.channel.send('Try formatting the command like this: _filter voice add <amount>_') 
                     return;
                 }
                 
                 for (var i = 0; i < amount; i++) {
                     message.guild.createChannel('auto', 'voice')
                 }
+                
+            break;
+                
+            case 'remove':
+                
                 
             break;
                 

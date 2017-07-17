@@ -19,7 +19,7 @@ module.exports = {
             break;
                 
             case 'remove':
-                console.log(message.guild.channels)
+                console.log(message.guild.channels.findAll('name', 'auto'))
                 
             break;
                 

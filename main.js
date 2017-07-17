@@ -6,7 +6,8 @@ const group = require('./group.js');
 const embed = require('./embed.js');
 const dm = require('./direct.js');
 const dice = require('./dice.js');
-const admin = require('./autoadmin.js')
+const admin = require('./autoadmin.js');
+const channels = require('./channels.js');
 
 bot.on('ready', () => { console.log('Tank Filled!') });
 

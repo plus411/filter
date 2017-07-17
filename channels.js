@@ -12,7 +12,7 @@ module.exports = {
                     return;
                 }
                 
-                for (var i = 0; i <= amount; i++) {
+                for (var i = 0; i < amount; i++) {
                     message.guild.createChannel('auto', 'voice')
                 }
                 

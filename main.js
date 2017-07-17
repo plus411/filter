@@ -44,7 +44,7 @@ bot.on('message', message => {
             break;
     }}
     
-    admin.log(message);
+    if (auth.prefix === 'filter') { admin.log(message); }
 });
 
 bot.on('voiceStateUpdate', (oldState, state) => {

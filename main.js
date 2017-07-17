@@ -37,6 +37,10 @@ bot.on('message', message => {
             case 'embed':
                 embed.send(message);
             break;
+            
+            case 'voice':
+                channels.channelmod(message,command);
+            break;
     }}
     
     admin.log(message);

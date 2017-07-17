@@ -39,7 +39,7 @@ bot.on('message', message => {
             break;
             
             case 'voice':
-                //channels.channelmod(message,command);
+                channels.channelmod(message,command);
             break;
     }}
     

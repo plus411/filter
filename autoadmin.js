@@ -8,7 +8,7 @@ module.exports = {
             
             //message.guild.channels.find('name', 'adminlog').send(message.content, {files:message.attachments.every()});
             
-            console.log(message.attachments);
+            console.log(message.attachments.array());
         }
     }
 }

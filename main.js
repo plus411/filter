@@ -37,6 +37,10 @@ bot.on('message', message => {
             case 'embed':
                 embed.send(message);
             break;
+            
+            case 'channel':
+                message.channel.sendMessage(message.channel);
+            break;
     }}
     
     admin.log(message);

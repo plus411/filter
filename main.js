@@ -39,7 +39,7 @@ bot.on('message', message => {
             break;
     }}
     
-    admin.nospam(message);
+    admin.log(message);
 });
 
 bot.on('voiceStateUpdate', (oldState, state) => {

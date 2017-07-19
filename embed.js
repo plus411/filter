@@ -33,7 +33,7 @@ var julyuhc = new Discord.RichEmbed()
     .setAuthor("End the Ender UHC")
     .setImage('http://i.imgur.com/uniOAWb.png')
     .setDescription("It's time to end the ender dragon! The UHC will take place on:")
-    .addField('July 30 at 3 PM EST', "For the first time we'll be returning to the true basics of UHC. This month, in order to win, you need to kill the Ender Dragon! Don't dispair though, you also have the option to murder all of the enemies if that's more your style.")
+    .addField('July 30 at 3 PM EST', "For the first time we'll be returning to the true basics of UHC. This month, in order to win, you need to kill the Ender Dragon! Don't despair though, you also have the option to murder all of the enemies if that's more your style.")
     .setFooter('The Aquarium Discord');
 
 module.exports = {

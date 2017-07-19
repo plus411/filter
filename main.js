@@ -36,7 +36,7 @@ bot.on('message', message => {
 			break;
             
             case 'embed':
-                embed.send(message, true, true);
+                embed.send(message, true, false);
             break;
             
             case 'voice':

@@ -23,7 +23,7 @@ module.exports = {
   },
   
   build: function() {
-    var msgArray = [];
+    var msgArray = ['***Upcoming Events:***'];
     
     schedule.forEach(function (object) {
       var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

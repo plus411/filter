@@ -39,7 +39,7 @@ module.exports = {
       
       msgArray.push(object.title);
       msgArray.push(weekday + ', ' + month + ' ' + day + ' at ' + hour);
-      msgArray.push(description);
+      msgArray.push(object.description);
       msgArray.push('---');
     });
     

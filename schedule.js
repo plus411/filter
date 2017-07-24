@@ -51,7 +51,7 @@ module.exports = {
   },
   
   display: function(message) {
-    self.groom();
-    message.channel.send(self.build());
+    exports.groom();
+    message.channel.send(exports.build());
   }
 }

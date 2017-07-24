@@ -51,7 +51,7 @@ module.exports = {
   },
   
   display: function(message) {
-    exports.groom();
-    message.channel.send(exports.build());
+    module.exports.groom();
+    message.channel.send(module.exports.build());
   }
 }

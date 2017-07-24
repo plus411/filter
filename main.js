@@ -8,6 +8,7 @@ const dm = require('./direct.js');
 const dice = require('./dice.js');
 const admin = require('./autoadmin.js');
 const channels = require('./channels.js');
+const sched = require('./schedule.js');
 
 bot.on('ready', () => { console.log('Tank Filled!') });
 
@@ -41,6 +42,10 @@ bot.on('message', message => {
             
             case 'voice':
                 channels.channelmod(message,command);
+            break;
+        
+            case 'events':
+                sched.display(message);
             break;
     }}
     

@@ -23,7 +23,7 @@ module.exports = {
   },
   
   build: function() {
-    var msgArray = ['```'];
+    var msgArray = [];
     
     schedule.forEach(function (object) {
       var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -40,14 +40,13 @@ module.exports = {
         hour = hour + "PM ET";
       }
       
-      msgArray.push(object.title.toUpperCase());
-      msgArray.push(weekday + ', ' + month + ' ' + day + ' at ' + hour);
+      msgArray.push('**' + object.title.toUpperCase() + '**');
+      msgArray.push('__' + weekday + ', ' + month + ' ' + day + ' at ' + hour + '__');
       msgArray.push(object.description);
       msgArray.push('---');
     });
     
     msgArray.pop();
-    msgArray.push('```');
     
     return msgArray;
     

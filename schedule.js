@@ -41,7 +41,7 @@ module.exports = {
       }
       
       msgArray.push('**' + object.title.toUpperCase() + '**');
-      msgArray.push('__' + weekday + ', ' + month + ' ' + day + ' at ' + hour + '__');
+      msgArray.push('*' + weekday + ', ' + month + ' ' + day + ' at ' + hour + '*');
       msgArray.push(object.description);
       msgArray.push('---');
     });

@@ -1,12 +1,9 @@
 // Schedule.js
 // Allows mods and admins to create a schedule and players to view it
 var schedule = [
-  { date: new Date(2017, 6, 30, 15),
-    title: 'end the ender uhc',
-    description: "The Aquarium's first kill the ender dragon UHC!" },
-  { date: new Date(2017, 6, 28, 16),
-    title: 'minigame night!',
-    description: "The Aquarium Minigame Night! We play 2 different (usually competitive) minigames." } 
+  { date: new Date(2017, 7, 4, 16),
+    title: 'karaoke night',
+    description: "Let's sing! Serenade us with the song of your peoples at our biweekly karaoke night!" } 
 ]; 
 
 module.exports = {

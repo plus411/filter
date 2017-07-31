@@ -6,7 +6,7 @@ const moment = require('moment.js');
 var schedule = [
   { date: moment('2017/08/05-04:30pm', 'YYYY/MM/DD-hh:mmaa'),
     title: 'karaoke night',
-    description: "Let's sing! Serenade us with the song of your peoples at our biweekly karaoke night!" } 
+    description: "Let's sing! Serenade us with the song of your peoples at our biweekly karaoke night!" }, 
 
   { date: moment('2017/08/11-04:00pm', 'YYYY/MM/DD-hh:mmaa'),
     title: 'minigame night',
@@ -23,7 +23,7 @@ module.exports = {
       msgArray.push('*in ' + object.date.fromNow() + '*');
       msgArray.push(schedule.description);
     });
-  }
+  },
 
   display: function(message) {
 

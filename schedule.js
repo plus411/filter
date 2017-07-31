@@ -15,7 +15,7 @@ var schedule = [
 
 module.exports = {
   build: function() {
-    var msgArray = ['***Upcoming Events:***'];
+    var msgArray = ['***UPCOMING EVENTS:***'];
 
     schedule.forEach(function(object) {
       msgArray.push('**' + object.title.toUpperCase() + '**');

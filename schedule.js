@@ -1,7 +1,7 @@
 // Schedule.js
 // Allows mods and admins to create a schedule and players to view it
 
-const moment = require('moment.js'); 
+const moment = require('moment'); 
 
 var schedule = [
   { date: moment('2017/08/05-04:30pm', 'YYYY/MM/DD-hh:mmaa'),

@@ -24,7 +24,7 @@ module.exports = {
     
     schedule.forEach(function (object) {
       var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      var dayNames = ['none','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      var dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
       
       var weekday = dayNames[object.date.getDay()];
       var month = monthNames[object.date.getMonth()];

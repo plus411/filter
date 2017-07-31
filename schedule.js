@@ -18,10 +18,9 @@ module.exports = {
     var msgArray = ['***UPCOMING EVENTS:***'];
 
     schedule.forEach(function(object) {
-      msgArray.push('**' + object.title + '**');
-      msgArray.push('*' + object.date.format('dddd, MMMM D [at] h:m A') + '*');
-      msgArray.push('*in ' + object.date.fromNow() + '*');
-      msgArray.push(schedule.description);
+      msgArray.push('**' + object.title.toUpperCase() + '**');
+      msgArray.push('*' + object.date.format('dddd, MMMM D [at] h:m A') + ' ' + object.date.fromNow() + '*');
+      msgArray.push(object.description);
       msgArray.push('-----');
     });
 

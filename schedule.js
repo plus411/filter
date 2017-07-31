@@ -22,10 +22,15 @@ module.exports = {
       msgArray.push('*' + object.date.format('dddd, MMMM D [at] h:m A') + '*');
       msgArray.push('*in ' + object.date.fromNow() + '*');
       msgArray.push(schedule.description);
+      msgArray.push('-----');
     });
+
+    msgArray.pop();
+    
+    return msgArray
   },
 
   display: function(message) {
-
+    message.channel.send(module.exports.build());
   }
 }

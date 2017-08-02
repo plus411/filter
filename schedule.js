@@ -45,7 +45,7 @@ module.exports = {
 
   add: function(message, command, cmdRaw) {
     var type = command[2];
-    var input = commandRaw.splice(0, 3);
+    var input = cmdRaw.splice(0, 3);
 
     if ( type === commit ) { 
       for ( var i = 0; i <= schedule.length(); i++ ) {

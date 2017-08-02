@@ -55,6 +55,7 @@ module.exports = {
       }
     }
 
+    if ( type === "date" ) { input = moment(command[3], 'YYYY/MM/DD-hh:mmaa'); }
     if ( type === "title" ) { input = input.toLowerCase(); }
 
     draft[type] = input;

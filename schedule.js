@@ -51,14 +51,19 @@ module.exports = {
       for ( var i = 0; i <= schedule.length; i++ ) {
         if ( draft.date.isBefore(schedule.date) ) {
           schedule.splice(i, 0, draft);
+          console.log('commit ran');
         }
       }
     }
 
-    if ( type === "date" ) { input = moment(command[3], 'YYYY/MM/DD-hh:mmaa'); }
-    if ( type === "title" ) { input = input.toLowerCase(); }
+    if ( type === "date" ) { input = moment(command[3], 'YYYY/MM/DD-hh:mmaa'); console.log('date added') }
+    if ( type === "title" ) { input = input.toLowerCase(); console.log('title added')}
 
     draft[type] = input;
+
+    console.log(type);
+    console.log(input);
+    console.log(draft);
   }
 
 }

@@ -47,7 +47,7 @@ module.exports = {
     var type = command[2];
     var input = cmdRaw.splice(0, 3);
 
-    if ( type === commit ) { 
+    if ( type === "commit" ) { 
       for ( var i = 0; i <= schedule.length(); i++ ) {
         if ( draft.date.isBefore(schedule.date) ) {
           schedule.splice(i, 0, draft);

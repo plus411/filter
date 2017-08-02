@@ -52,6 +52,7 @@ module.exports = {
         if ( draft.date.isBefore(schedule.date) ) {
           schedule.splice(i, 0, draft);
           console.log('commit ran');
+          return
         }
       }
     }

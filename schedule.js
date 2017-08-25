@@ -48,13 +48,7 @@ module.exports = {
     var input = cmdRaw.slice(3).join(' ');
 
     if ( type === "commit" ) { 
-      for ( var i = 0; i <= schedule.length; i++ ) {
-        if ( draft.date.isBefore(schedule.date) ) {
-          schedule.splice(i, 0, draft);
-          console.log('commit ran');
-          return
-        }
-      }
+      
     }
 
     if ( type === "date" ) { input = moment(command[3], 'YYYY/MM/DD-hh:mmaa'); console.log('date added') }

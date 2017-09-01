@@ -20,7 +20,7 @@ module.exports = {
                 
             case 'remove':
                 message.guild.channels.findAll('name', 'auto').forEach(function(channel, item) {
-                    if (item.members.length > 0) {
+                    if (item.members.array().length > 0) {
                         channel.delete()
                     }
                 })

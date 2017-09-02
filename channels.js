@@ -53,10 +53,9 @@ module.exports = {
                         var defaultChannels = ['General', 'Alternate', 'Overflow'];
                         defaultChannels.forEach((channel, index) => {
                             if (!message.guild.channels.find('name', channel)) {
-                                message.guild.createChannel(channel, 'voice');
-                                message.guild.channels.find('name', channel)
-                                 .setPosition(index)
-                                 .catch(console.error);
+                                message.guild.createChannel(channel, 'voice')
+                                .then(channel => channel.setPosition(index))
+                                .catch(console.error);
                             }
                         });
 

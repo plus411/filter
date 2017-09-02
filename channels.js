@@ -3,7 +3,7 @@
 
 module.exports = {
     remove: function(message, command) {
-        message.guild.channels.findAll('name', 'auto').forEach(function(channel, item) {
+        message.guild.channels.findAll('name', 'Team').forEach(function(channel, item) {
             if (channel.members.array().length == 0) {
                 channel.delete()
             }
@@ -12,7 +12,7 @@ module.exports = {
 
     autoPurge: function(message, command) {
         console.log('Running autoPurge.');
-        if (message.guild.channels.findAll('name', 'auto').length > 0) {
+        if (message.guild.channels.findAll('name', 'Team').length > 0) {
             module.exports.remove(message, command);
             setTimeout(() => { module.exports.autoPurge(message, command) }, 30000);
         }
@@ -31,7 +31,7 @@ module.exports = {
                 }
                 
                 for (var i = 0; i < amount; i++) {
-                    message.guild.createChannel('auto', 'voice')
+                    message.guild.createChannel('Team', 'voice')
                 }
 
                 module.exports.autoPurge(message, command);
@@ -40,7 +40,19 @@ module.exports = {
                 
             case 'remove':
                 module.exports.remove(message, command);
-                
+            break;
+
+            case 'setup':
+                switch (command[3]) {
+                    case 'uhc':
+                        var defaultChannels = ['General', 'Alternate', 'Overflow'];
+                        defaultChannels.forEach((channel) => {
+                            message.guild.channels.find('name', channel).delete();
+                        })
+
+                        message.guild.createChannel('Pregame/Postgame');
+                    break;
+                }
             break;
                 
         }

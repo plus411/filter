@@ -44,13 +44,26 @@ module.exports = {
 
             case 'setup':
                 switch (command[3]) {
-                    case 'uhc':
+                    case 'reset':
+                        var removeChannels = [];
+                        removeChannels.forEach((channel) => {
+                            message.guild.channels.find('name', channel).delete();
+                        });
+
                         var defaultChannels = ['General', 'Alternate', 'Overflow'];
                         defaultChannels.forEach((channel) => {
-                            message.guild.channels.find('name', channel).delete();
-                        })
+                            if (!message.guild.channels.find('name', channel)) {
+                                message.guild.createChannel(channel, 'voice');
+                            }
+                        });
 
-                        message.guild.createChannel('Pregame/Postgame');
+                    break;
+
+                    case 'uhc':
+                        var defaultChannels = ['Alternate', 'Overflow'];
+                        defaultChannels.forEach((channel) => {
+                            message.guild.channels.find('name', channel).delete();
+                        });
                     break;
                 }
             break;

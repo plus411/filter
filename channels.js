@@ -11,6 +11,7 @@ module.exports = {
     },
 
     autoPurge: function(message, command) {
+        console.log('Running autoPurge.');
         if (message.guild.channels.findAll('name', 'auto').length > 0) {
             module.exports.remove(message, command);
             setTimeout(() => { module.exports.autoPurge(message, command) }, 30000);

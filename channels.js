@@ -54,7 +54,7 @@ module.exports = {
                         defaultChannels.forEach((channel, index) => {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice');
-                                message.guild.channel.find('name', channel)
+                                message.guild.channels.find('name', channel)
                                  .setPosition(index)
                                  .catch(console.error);
                             }

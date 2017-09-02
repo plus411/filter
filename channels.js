@@ -57,7 +57,7 @@ module.exports = {
                                 .then(channel => {
                                     channel.setPosition(-4, true);
                                     console.log(channel.position);
-                                }
+                                })
                                 .catch(console.error);
                             }
                         });

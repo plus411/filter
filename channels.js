@@ -58,7 +58,7 @@ module.exports = {
                                     console.log(channel + ' has been created.');
                                     return newChannel;
                                 }).then(newChannel => {
-                                    newChannel.setPosition(-4, true);
+                                    newChannel.setPosition(1);
                                     console.log(newChannel + ' is position ' + newChannel.position);
                                 })
                                 .catch(console.error);

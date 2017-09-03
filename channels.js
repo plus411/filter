@@ -70,7 +70,7 @@ module.exports = {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(newChannel => {
                                     moveable.push(newChannel);
-                                    if (index === defaultChannels.length) {
+                                    if (index === (defaultChannels.length - 1) {
                                         moveChannel();
                                     }
                                 })

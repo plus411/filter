@@ -70,7 +70,7 @@ module.exports = {
                     message.guild.createChannel('Team', 'voice')
                 }
 
-                module.exports.autoPurge(message, command);
+                setTimeout(() => {module.exports.autoPurge(message)}, 60000);
                 
             break;
                 

@@ -54,20 +54,24 @@ module.exports = {
                         defaultChannels.forEach((channel, index) => {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice')
-                                .then(channel => {
-                                    channel.setPosition(-4, true);
-                                    console.log(channel + ' is position ' + channel.position);
+                                .then(newChannel => {
+                                    console.log(channel + ' has been created.');
+                                    return newChannel;
+                                }).then(newChannel => {
+                                    newChannel.setPosition(-4, true);
+                                    console.log(newChannel + ' is position ' + newChannel.position);
                                 })
                                 .catch(console.error);
                             }
-
                         });
 
+                        /*
                         defaultChannels.forEach((channel) => {
                             if (message.guild.channels.find('name', channel)) {
                             console.log(channel + ' is finally at position ' + message.guild.channels.find('name', channel).position)
                             } else { console.log(channel + " Doesn't have a position.")}
                         });
+                        */
 
                     break;
 

@@ -56,10 +56,15 @@ module.exports = {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(channel => {
                                     channel.setPosition(-4, true);
-                                    console.log(channel.position);
+                                    console.log(channel + ' is position ' + channel.position);
                                 })
                                 .catch(console.error);
                             }
+
+                        });
+
+                        defaultChannels.forEach((channel) => {
+                            console.log(channel + ' is finally at position ' + message.guild.channels.find('name', channel).position)
                         });
 
                     break;

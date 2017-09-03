@@ -57,7 +57,8 @@ module.exports = {
                                 .then(newChannel => {
                                     setTimeout((newChannel) => {
                                         newChannel.setPosition(-4, true);
-                                    }, 50, newChannel);
+                                        console.log(newChannel + ' channel moved')
+                                    }, 100, newChannel);
                                 })
                                 .catch(console.error);
                             }

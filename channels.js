@@ -64,7 +64,9 @@ module.exports = {
                         });
 
                         defaultChannels.forEach((channel) => {
+                            if (message.guild.channels.find('name', channel)) {
                             console.log(channel + ' is finally at position ' + message.guild.channels.find('name', channel).position)
+                            } else { console.log(channel + " Doesn't have a position.")}
                         });
 
                     break;

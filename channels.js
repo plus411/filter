@@ -87,7 +87,12 @@ module.exports = {
                             message.guild.channels.find('name', channel).delete();
                         });
                     break;
+
                 }
+            break;
+
+            case 'reorder':
+                module.exports.reorder(message);
             break;
                 
         }

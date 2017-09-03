@@ -56,7 +56,7 @@ module.exports = {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(newChannel => {
                                     setTimeout((newChannel) => {
-                                        newChannel.setPosition(-4, true);
+                                        newChannel.setPosition(-3, true);
                                         console.log(newChannel + ' channel moved')
                                     }, 100, newChannel);
                                 })

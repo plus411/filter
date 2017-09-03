@@ -18,6 +18,18 @@ module.exports = {
         }
     },
 
+    reorder: function(message) {
+        var voiceChannelOrder = ['General', 'Alternate', 'Overflow', 'Team', 'Ballroom', 'Private', 'Sleepy Lotls'];
+
+        voiceChannelOrder.forEach( (channelOrder, index) => {
+            var channel = message.channel.findAll('name', channelOrder)
+
+            channel.forEach( (item) => {
+                item.setPosition(index + 1);
+            });
+        });
+    },
+
     channelmod: function(message,command) {
         switch (command[2]) {
         
@@ -51,17 +63,6 @@ module.exports = {
                         });
 
                         var defaultChannels = ['General', 'Alternate', 'Overflow'];
-                        var moveable = [];
-
-                        var moveChannel = function(channelArray) {
-                            console.log('Ran move channel')
-                            setTimeout(() => {
-                                console.log('Channel Moved');
-                                moveable[0].setPosition(-3, true);
-                                moveable.shift();
-                                if (moveable.length > 0) { moveChannel(); }
-                            }, 5000);
-                        }
 
                         console.log(defaultChannels.length);
 
@@ -69,9 +70,8 @@ module.exports = {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(newChannel => {
-                                    moveable.push(newChannel);
                                     if (index === (defaultChannels.length - 1)) {
-                                        moveChannel();
+                                        module.exports.reorder(message);
                                     }
                                 })
                                 .catch(console.error);

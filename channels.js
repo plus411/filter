@@ -60,7 +60,7 @@ module.exports = {
                                 moveable[0].setPosition(-3, true);
                                 moveable.shift();
                                 if (moveable.length > 0) { moveChannel(); }
-                            }, 10000);
+                            }, 1000);
                         }
 
                         console.log(defaultChannels.length);

@@ -51,26 +51,29 @@ module.exports = {
                         });
 
                         var defaultChannels = ['General', 'Alternate', 'Overflow'];
+                        var moveable = [];
+
+                        var moveChannel = function(channelArray) {
+                            setTimeout(() => {
+                                moveable[0].setPosition(-3, true);
+                                moveable.shift();
+                                if (moveable.length > 0) { moveChannel(); }
+                            }, 500);
+                        }
+
                         defaultChannels.forEach((channel, index) => {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(newChannel => {
-                                    setTimeout((newChannel) => {
-                                        newChannel.setPosition(-3, true);
-                                        console.log(newChannel + ' channel moved')
-                                    }, 500, newChannel);
+                                    moveable.push(newChannel);
+                                    if (index === defaultChannels.length()) {
+                                        moveChannel();
+                                    }
                                 })
                                 .catch(console.error);
                             }
                         });
 
-                        /*
-                        defaultChannels.forEach((channel) => {
-                            if (message.guild.channels.find('name', channel)) {
-                            console.log(channel + ' is finally at position ' + message.guild.channels.find('name', channel).position)
-                            } else { console.log(channel + " Doesn't have a position.")}
-                        });
-                        */
 
                     break;
 

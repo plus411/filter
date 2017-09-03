@@ -26,7 +26,7 @@ module.exports = {
 
             channel.forEach( (item) => {
                 console.log(item.position);
-                item.setPosition( (index + 1) * 10 );
+                item.setPosition( index + 1 );
                 console.log(item.position);
             });
         });

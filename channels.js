@@ -55,11 +55,9 @@ module.exports = {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice')
                                 .then(newChannel => {
-                                    console.log(channel + ' has been created.');
-                                    return newChannel;
-                                }).then(newChannel => {
-                                    newChannel.setPosition(1);
-                                    console.log(newChannel + ' is position ' + newChannel.position);
+                                    setTimeout((newChannel) => {
+                                        newChannel.setPosition(-4, true);
+                                    }, 50, newChannel);
                                 })
                                 .catch(console.error);
                             }

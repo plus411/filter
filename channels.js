@@ -58,7 +58,7 @@ module.exports = {
                                     setTimeout((newChannel) => {
                                         newChannel.setPosition(-3, true);
                                         console.log(newChannel + ' channel moved')
-                                    }, 100, newChannel);
+                                    }, 500, newChannel);
                                 })
                                 .catch(console.error);
                             }

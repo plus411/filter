@@ -22,7 +22,7 @@ module.exports = {
         var voiceChannelOrder = ['General', 'Alternate', 'Overflow', 'Team', 'Ballroom', 'Private', 'Sleepy Lotls'];
 
         voiceChannelOrder.forEach( (channelOrder, index) => {
-            var channel = message.channel.findAll('name', channelOrder)
+            var channel = message.guild.channels.findAll('name', channelOrder)
 
             channel.forEach( (item) => {
                 item.setPosition(index + 1);

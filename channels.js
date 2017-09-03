@@ -21,6 +21,23 @@ module.exports = {
     reorder: function(message) {
         var voiceChannelOrder = ['General', 'Alternate', 'Overflow', 'Ballroom', 'Private', 'Sleepy Lotls'];
 
+        var newChannelPositions = [];
+        var channelPosition = {};
+
+        voiceChannelOrder.forEach( (item, index) => {
+            channelPosition = {
+                channel: message.guild.channels.find('name', item),
+                position: index + 1
+            }
+
+            newChannelPositions.push(channelPosition);
+        })
+
+        message.guild.setChannelPositions(newChannelPositions)
+        .then( () => {console.log('New channel positions set')})
+        .catch(console.error);
+
+        /*
         voiceChannelOrder.forEach( (channelOrder, index) => {
             var channel = message.guild.channels.findAll('name', channelOrder)
 
@@ -34,6 +51,7 @@ module.exports = {
                 console.log(item.position);
             });
         });
+        */
     },
 
     channelmod: function(message,command) {

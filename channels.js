@@ -56,7 +56,7 @@ module.exports = {
                         var moveChannel = function(channelArray) {
                             console.log('Ran move channel')
                             setTimeout(() => {
-                                console.log(moveable[0]);
+                                console.log(Channel moved);
                                 moveable[0].setPosition(-3, true);
                                 moveable.shift();
                                 if (moveable.length > 0) { moveChannel(); }

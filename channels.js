@@ -63,6 +63,8 @@ module.exports = {
                             }, 500);
                         }
 
+                        console.log(defaultChannels.length);
+
                         defaultChannels.forEach((channel, index) => {
                             if (!message.guild.channels.find('name', channel)) {
                                 message.guild.createChannel(channel, 'voice')

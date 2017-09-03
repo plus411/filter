@@ -19,10 +19,14 @@ module.exports = {
     },
 
     reorder: function(message) {
-        var voiceChannelOrder = ['Sleepy Lotls', 'Private', 'Ballroom', 'Overflow', 'Alternate', 'General'];
+        var voiceChannelOrder = ['General', 'Alternate', 'Overflow', 'Ballroom', 'Private', 'Sleepy Lotls'];
 
         voiceChannelOrder.forEach( (channelOrder, index) => {
             var channel = message.guild.channels.findAll('name', channelOrder)
+
+            channel.forEach( (item) => {
+                item.setPosition(index + 100);
+            });
 
             channel.forEach( (item) => {
                 console.log(item.position);

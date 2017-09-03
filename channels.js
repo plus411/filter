@@ -25,7 +25,7 @@ module.exports = {
             var channel = message.guild.channels.findAll('name', channelOrder)
 
             channel.forEach( (item) => {
-                item.setPosition(index + 1);
+                item.setPosition( (index + 1) * 10 );
             });
         });
     },

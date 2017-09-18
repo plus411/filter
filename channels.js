@@ -36,22 +36,6 @@ module.exports = {
         message.guild.setChannelPositions(newChannelPositions)
         .then( () => {console.log('New channel positions set')})
         .catch(console.error);
-
-        /*
-        voiceChannelOrder.forEach( (channelOrder, index) => {
-            var channel = message.guild.channels.findAll('name', channelOrder)
-
-            channel.forEach( (item) => {
-                item.setPosition(index + 100);
-            });
-
-            channel.forEach( (item) => {
-                console.log(item.position);
-                item.setPosition( index + 1 );
-                console.log(item.position);
-            });
-        });
-        */
     },
 
     channelmod: function(message,command) {

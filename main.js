@@ -53,7 +53,7 @@ bot.on('message', message => {
 			break;
 
 			case 'test':
-				message.react('U+1F600')
+				message.react('😀')
 			break;
     }}
     

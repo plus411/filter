@@ -51,6 +51,10 @@ bot.on('message', message => {
 			case 'schedule':
 				sched.add(message, command, cmdRaw);
 			break;
+
+			case 'test':
+				message.react(':smile:')
+			break;
     }}
     
     if (auth.prefix === 'filter') { admin.log(message); }

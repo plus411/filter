@@ -1,14 +1,18 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const auth = require('./auth.js');
 const cmdProcess = require('./command.js');
 const group = require('./group.js');
 const embed = require('./embed.js');
 const dm = require('./direct.js');
 const dice = require('./dice.js');
-const admin = require('./autoadmin.js')
+const admin = require('./autoadmin.js');
+const db = require('./db.js');
 
-bot.on('ready', () => { console.log('Tank Filled!') });
+var options
+
+bot.on('ready', () => { 
+	console.log('Tank Filled!');
+});
 
 bot.on('message', message => {
 	var command = cmdProcess.makeCommand(message.content);
@@ -19,11 +23,11 @@ bot.on('message', message => {
 	if (command[0] == auth.prefix) {
   	switch (command[1]) {
     	case 'join':
-				group.group(message, command, cmdRaw);
+				group.group(message, command, cmdRaw, options);
 			break;
 
 			case 'leave':
-				group.group(message, command, cmdRaw);
+				group.group(message, command, cmdRaw, options);
 			break;
 
 			case 'rules':
@@ -40,10 +44,14 @@ bot.on('message', message => {
             
             case 'voice':
                 //channels.channelmod(message,command);
-            break;
+			break;
+			
+			case 'test':
+				console.log(options)
+			break;
     }}
     
-    admin.log(message);
+    //admin.log(message);
 });
 
 bot.on('voiceStateUpdate', (oldState, state) => {
@@ -54,5 +62,11 @@ bot.on('voiceStateUpdate', (oldState, state) => {
  }
 });
 
+var settings = db.loadSettings((settings) => {
+	options = settings;
+	console.log('Settings loaded, logging in!');
+	bot.login(settings.token);
+	console.log('Settings: ' + settings)
+});
 
-bot.login(auth.token);
+

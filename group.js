@@ -1,12 +1,16 @@
 // Group.js
 // Group processing
 
-var alias = [['nsfw-saltwater','saltwater','shitposting'],['Derpy Lotls','overwatch','derpwatch','derpy lotls'],['Aquarium Pirates', 'pirates', 'captain', 'captains', 'aqua', 'cloud pirates', 'aquarium pirates'],['Terralotls', 'terraria', 'aquarria']]
-var groupsJoinable = ['Derpy Lotls', 'Lotls', 'Reef Dwellers', 'Aquarium Pirates', 'Terralotls'];
-var channelsJoinable = ['nsfw-saltwater'];
+//var alias = [['nsfw-saltwater','saltwater','shitposting'],['Derpy Lotls','overwatch','derpwatch','derpy lotls'],['Aquarium Pirates', 'pirates', 'captain', 'captains', 'aqua', 'cloud pirates', 'aquarium pirates'],['Terralotls', 'terraria', 'aquarria']]
+//var groupsJoinable = ['Derpy Lotls', 'Lotls', 'Reef Dwellers', 'Aquarium Pirates', 'Terralotls'];
+//var channelsJoinable = ['nsfw-saltwater'];
 
 module.exports = {
-	group: function (message, command, cmdRaw, data) {
+	group: function (message, command, cmdRaw, settings) {
+		var alias = settings.alias;
+		var groupsJoinable = settings.groupsJoinable;
+		var channelsJoinable = settings.channelsJoinable;
+
 		var operation = command[1];
 		var group = cmdRaw.slice(2).join(' ');
 
@@ -23,8 +27,8 @@ module.exports = {
 			console.log(message.member.nickname + ' has failed to join/leave ' + group + '. The group does not exist.');
 		return; }
 
-		if (message.member.nickname) {var name = message.member.nickname}
-		else {var name = message.author.username}
+		if (message.member.nickname) { var name = message.member.nickname }
+		else { var name = message.author.username }
 
 		switch (operation) {	
 			case 'join':

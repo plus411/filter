@@ -7,6 +7,7 @@ const dm = require('./direct.js');
 const dice = require('./dice.js');
 const admin = require('./autoadmin.js');
 const db = require('./db.js');
+const react = require('./autoreact.js');
 
 var options
 
@@ -18,9 +19,9 @@ bot.on('message', message => {
 	var command = cmdProcess.makeCommand(message.content);
 	var cmdRaw = cmdProcess.makeCommand(message.content, true);
 	
-	if (command === auth.prefix) {message.channel.send('Filtering Tank!');}
+	if (command === options.prefix) {message.channel.send('Filtering Tank!');}
 	
-	if (command[0] == auth.prefix) {
+	if (command[0] == options.prefix) {
   	switch (command[1]) {
     	case 'join':
 				group.group(message, command, cmdRaw, options);
@@ -47,7 +48,7 @@ bot.on('message', message => {
 			break;
 			
 			case 'test':
-				console.log(options)
+				react.poll(message);
 			break;
     }}
     
